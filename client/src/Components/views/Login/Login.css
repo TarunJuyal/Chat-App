@@ -1,0 +1,35 @@
+.loginPage {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.loginBody {
+  padding: 7vw;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  height: 50vh;
+  width: 40vw;
+  box-shadow: 0 1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.loginBody > img {
+  object-fit: contain;
+  height: 20vw;
+  margin-bottom: 2vw;
+}
+
+.loginBody > button {
+  margin-top: 50px;
+  padding: 10px;
+  color: black;
+}
+
+.loginText {
+  font-size: 14px;
+}
