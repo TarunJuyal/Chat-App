@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{ useState} from 'react';
 import "./SideBar.css";
 import { ChatRounded,MoreVertOutlined,SearchOutlined } from '@material-ui/icons';
 import { Avatar,IconButton ,Tooltip,Menu,MenuItem} from "@material-ui/core";
@@ -7,19 +7,11 @@ import { useSelector,useDispatch } from "react-redux";
 import { logoutUser } from "../../../actions/userActions";
 import NewContactForm from "./NewContactForm/NewContactForm";
 
-const SideBar = (props) => {
+const SideBar = ({rooms}) => {
+
     let user=useSelector(state=>state.user);
     const dispatch=useDispatch();
     const [anchorEl, setAnchorEl] = useState(null);
-    const [open, setOpen] = useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleCloseOpen = () => {
-        setOpen(false);
-    };
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -38,6 +30,14 @@ const SideBar = (props) => {
              }
          }))
     }
+
+ 
+
+    const renderChats=rooms.map((room,index)=>{
+        return (
+            <SideBarChat key={index} link={room._id} image={room.image} name={room.name} />
+        )
+    })
 
     return ( 
         <div className="sidebar">
@@ -75,10 +75,7 @@ const SideBar = (props) => {
                 </div>
             </div>
             <div className="sidebarChats">
-                <SideBarChat />
-                <SideBarChat />
-                <SideBarChat />
-                <SideBarChat />
+                {rooms && renderChats}
             </div>
         </div>
      );

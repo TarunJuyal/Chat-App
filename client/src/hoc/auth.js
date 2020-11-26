@@ -11,7 +11,7 @@ export default function (SpecificComponent) {
         if (await !response.payload.isAuth) {
             props.history.push("/");
         } else if(await response.payload.isAuth) {
-          props.history.push("/dashboard");
+          props.history.push(props.location.pathname);
         }
       });
     }, [dispatch, props.history]);

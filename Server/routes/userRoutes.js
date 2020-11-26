@@ -35,6 +35,7 @@ userRoutes.get("/auth", auth, (req, res) => {
     email: req.user.email,
     name: req.user.name,
     image: req.user.image,
+    contacts:req.user.contacts,
   });
 });
 

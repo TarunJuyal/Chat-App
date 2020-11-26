@@ -4,6 +4,14 @@
   flex: 0.65;
 }
 
+.noChatSelectedWindow {
+  display: flex;
+  flex-direction: column;
+  flex: 0.65;
+  align-items: center;
+  justify-content: center;
+}
+
 .chatHeader {
   display: flex;
   padding: 20px;

@@ -1,16 +1,19 @@
 import React from 'react';
 import "./SideBarChat.css"
 import { Avatar } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
-const SideBarChat = () => {
+const SideBarChat = (props) => {
     return ( 
+        <Link to={`/chat/${props.link}`} style={{textDecoration:"none"}}>
         <div className="sidebarChat">
-            <Avatar />
+            <Avatar src={props.image}/>
             <div className="sidebarChatInfo">
-                <h2>Room name</h2>
-                <p>Last message</p>
+                <h2>{props.name}</h2>
+                <p>Last Message</p>
             </div>
         </div>
+        </Link>
      );
 }
  

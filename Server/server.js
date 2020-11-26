@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 
 app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/messages", require("./routes/messageRoutes"));
+app.use("/api/room", require("./routes/roomRoutes"));
 
 const port=process.env.PORT || 5000;
 app.listen(port,()=>{

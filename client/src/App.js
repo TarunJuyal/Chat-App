@@ -10,6 +10,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
+        <Route exact path="/chat/:roomId" component={Auth(Dashboard)}></Route>
         <Route exact path="/dashboard" component={Auth(Dashboard)}></Route>
         <Route exact path="/" component={Auth(LoginPage)}></Route>
       </Switch>
