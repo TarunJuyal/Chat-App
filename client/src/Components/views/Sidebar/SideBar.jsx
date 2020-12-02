@@ -7,11 +7,13 @@ import { useSelector,useDispatch } from "react-redux";
 import { logoutUser } from "../../../actions/userActions";
 import NewContactForm from "./NewContactForm/NewContactForm";
 
-const SideBar = ({rooms}) => {
+
+const SideBar = ({rooms, onChange}) => {
 
     let user=useSelector(state=>state.user);
     const dispatch=useDispatch();
     const [anchorEl, setAnchorEl] = useState(null);
+
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -31,8 +33,6 @@ const SideBar = ({rooms}) => {
          }))
     }
 
- 
-
     const renderChats=rooms.map((room,index)=>{
         return (
             <SideBarChat key={index} link={room._id} image={room.image} name={room.name} />
@@ -44,7 +44,7 @@ const SideBar = ({rooms}) => {
             <div className="sidebarHeader">
                 <Avatar src={user?.userData?.image}/>
                 <div className="sidebarHeaderRight">
-                   <NewContactForm />
+                   <NewContactForm onChange={onChange}/>
                    <Tooltip title="New Group">
                         <IconButton>
                             <ChatRounded />

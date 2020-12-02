@@ -50,7 +50,11 @@
   border-top: 1px solid lightgray;
 }
 
-.chatFooter > input {
+.chatFooter > form {
+  flex: 1;
+}
+
+.input-text {
   flex: 1;
   border-radius: 30px;
   padding: 10px;

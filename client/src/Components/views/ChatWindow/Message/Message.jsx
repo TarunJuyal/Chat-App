@@ -1,12 +1,12 @@
 import React from 'react';
 import "./Message.css";
 
-const Message = (props) => {
+const Message = ({ from, receiver,content, sentAt }) => {
     return ( 
-        <p className={props.receiver ? "chatMessage chatReceiver":"chatMessage"}>
-            <span className="chatName">Name</span>
-            This is Message
-            <span className="chatTimestamp">{new Date().toUTCString()}</span>
+        <p className={receiver ? "chatReceiver chatMessage":"chatMessage"}>
+            <span className="chatName">{from}</span>
+            {content}
+            <span className="chatTimestamp">{sentAt}</span>
         </p>
      );
 }
